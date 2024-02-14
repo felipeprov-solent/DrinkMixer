@@ -1,6 +1,6 @@
 ﻿using System.Runtime.Serialization;
 
-namespace DrinkMixer.DTO
+namespace DrinkMixer.Lib.DTO
 {
     [DataContract]
     public class SearchRecipeParameter

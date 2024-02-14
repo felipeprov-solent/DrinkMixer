@@ -1,6 +1,6 @@
-﻿using DrinkMixer.DAO;
+﻿using DrinkMixer.Exec.DAO;
 
-namespace DrinkMixer.BO
+namespace DrinkMixer.Lib.BO
 {
     public class RecipeBO : BaseData
     {

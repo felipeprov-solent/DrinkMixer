@@ -1,12 +1,13 @@
-﻿using DrinkMixer.BO;
-using DrinkMixer.DAO;
-using DrinkMixer.DTO;
+﻿using DrinkMixer.Lib.BO;
+using DrinkMixer.Exec.DAO;
+using DrinkMixer.Lib.DTO;
+using DrinkMixer.Lib.Service;
 
-namespace DrinkMixer.Service
+namespace DrinkMixer.Exec.Service
 {
-    public class MixerService
+    public class MixerService : IMixerService
     {
-        public static string GetRecipePrice(SearchRecipeParameter param)
+        public string GetRecipePrice(SearchRecipeParameter param)
         {
             RecipeBO recipe = null;
 

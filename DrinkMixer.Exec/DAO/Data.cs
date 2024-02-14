@@ -1,6 +1,6 @@
-﻿using DrinkMixer.BO;
+﻿using DrinkMixer.Lib.BO;
 
-namespace DrinkMixer.DAO
+namespace DrinkMixer.Exec.DAO
 {
     /// <summary>
     /// Classe temporaire pour pouvoir travailler avec les données

@@ -1,4 +1,4 @@
-﻿namespace DrinkMixer.BO
+﻿namespace DrinkMixer.Lib.BO
 {
     public class CurrencyBO : BaseData
     {

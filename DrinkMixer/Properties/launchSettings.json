@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "DrinkMixer": {
+      "commandName": "Project",
+      "commandLineArgs": "Capuccino"
+    }
+  }
+}

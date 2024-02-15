@@ -5,6 +5,7 @@ namespace DrinkMixer.Data.DAO
     /// <summary>
     /// Classe avec variables globales pour pouvoir travailler avec les données
     ///  => l'objectif serait d'avoir ces informations dans une DB ou fichier
+    ///  ==> et injecter la classe qui gère les données via DI dans les services (MixerService)
     /// </summary>
     public static class Data
     {

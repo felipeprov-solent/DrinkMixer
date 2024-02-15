@@ -1,39 +1,37 @@
-﻿using DrinkMixer.DTO;
-using DrinkMixer.Service;
+﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using DrinkMixer.Lib.Service;
+using DrinkMixer.Data.Service;
+using DrinkMixer.Exec;
 
-class Program
-{
-    static void Main(string[] args)
+HostApplicationBuilder builder = Host.CreateApplicationBuilder(args);
+
+builder.Services.AddTransient<IMixerService, MixerService>();
+builder.Services.AddTransient<ExempleClient>();
+
+using IHost host = builder.Build();
+
+ExempleService(host.Services, 1, "Expresso");
+ExempleService(host.Services, 2, "Allongé");
+ExempleService(host.Services, 3, "3");
+ExempleService(host.Services, 4, null); 
+
+await host.RunAsync();
+
+static void ExempleService(IServiceProvider hostProvider, int call, string arg)
+{   
+    try
     {
-        if (args.Length == 0)
-        {
-            throw new Exception("Aucun argument fourni. Veuillez indiquer le nom ou l'id de votre boisson.");
-        }
+        using IServiceScope serviceScope = hostProvider.CreateScope();
+        IServiceProvider provider = serviceScope.ServiceProvider;
+        ExempleClient exemple = provider.GetRequiredService<ExempleClient>();
 
-        SearchRecipeParameter param = null;
-        try
-        {
-            long id = (long)Convert.ToDouble(args[0]);
-            param = new SearchRecipeParameter { Id = id };
-        }
-        catch
-        {
-            param = new SearchRecipeParameter { Name = args[0] };
-        }
+        exemple.Do(call, arg);
 
-        try
-        {
-            Console.WriteLine($"Recette demandée : {args[0]} \r");
-            string price = MixerService.GetRecipePrice(param);
-
-            Console.WriteLine($"Prix : {price}\r");
-        }
-        catch (Exception e)
-        {
-            throw new Exception(e.Message);
-        }
-
-
-        return;
+        Console.WriteLine();
     }
+    catch(Exception e)
+    {
+        Console.WriteLine(e.Message);
+    } 
 }

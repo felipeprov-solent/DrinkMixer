@@ -1,23 +1,29 @@
-﻿using DrinkMixer.Lib.BO;
-using DrinkMixer.Exec.DAO;
+﻿using DrinkMixer.Data.BO;
 using DrinkMixer.Lib.DTO;
 using DrinkMixer.Lib.Service;
 
-namespace DrinkMixer.Exec.Service
+namespace DrinkMixer.Data.Service
 {
     public class MixerService : IMixerService
     {
-        public string GetRecipePrice(SearchRecipeParameter param)
+        Guid IServiceLifetime.Id { get; } = Guid.NewGuid();
+
+        public MixerService()
         {
+
+        }
+
+        public string GetRecipePrice(SearchRecipeParameter param)
+        {          
             RecipeBO recipe = null;
 
             if (param.Id != null)
             {
-                recipe = Data.Recipes.SingleOrDefault(r => r.Id == param.Id.Value);
+                recipe = DAO.Data.Recipes.SingleOrDefault(r => r.Id == param.Id.Value);
             }
             else if (param.Name != null)
             {
-                IList<RecipeBO> matchingRecipeName = Data.Recipes.Where(r => r.Name == param.Name).ToList();
+                IList<RecipeBO> matchingRecipeName = DAO.Data.Recipes.Where(r => r.Name == param.Name).ToList();
                 if (matchingRecipeName.Any())
                 {
                     if (matchingRecipeName.Count > 1)
@@ -37,7 +43,7 @@ namespace DrinkMixer.Exec.Service
                 throw new Exception("Aucune recette correspondante trouvée");
             }
 
-            return recipe.DisplayPriceInEuro;
+            return recipe.GetDisplayPriceInEuro(DAO.Data.Parameter.Margin);
         }
     }
 }

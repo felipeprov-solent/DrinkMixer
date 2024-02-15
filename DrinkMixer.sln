@@ -5,9 +5,11 @@ VisualStudioVersion = 17.8.34408.163
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DrinkMixer.Exec", "DrinkMixer.Exec\DrinkMixer.Exec.csproj", "{DADA9782-2611-4F1E-A0F1-442470A6B521}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DrinkMixer.Test", "DrinkMixer.Test\DrinkMixer.Test.csproj", "{E6978E95-0D8D-4B8C-9A0A-FCFD45CB7A6A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DrinkMixer.Test", "DrinkMixer.Test\DrinkMixer.Test.csproj", "{E6978E95-0D8D-4B8C-9A0A-FCFD45CB7A6A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DrinkMixer.Lib", "DrinkMixer.Lib\DrinkMixer.Lib.csproj", "{DCDF05D6-1941-47E9-8E92-4C5A806DE8D9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DrinkMixer.Lib", "DrinkMixer.Lib\DrinkMixer.Lib.csproj", "{DCDF05D6-1941-47E9-8E92-4C5A806DE8D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DrinkMixer.Data", "DrinkMixer.Data\DrinkMixer.Data.csproj", "{E04AA42A-BCE4-443C-A6FD-70F859814C63}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{DCDF05D6-1941-47E9-8E92-4C5A806DE8D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DCDF05D6-1941-47E9-8E92-4C5A806DE8D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DCDF05D6-1941-47E9-8E92-4C5A806DE8D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E04AA42A-BCE4-443C-A6FD-70F859814C63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E04AA42A-BCE4-443C-A6FD-70F859814C63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E04AA42A-BCE4-443C-A6FD-70F859814C63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E04AA42A-BCE4-443C-A6FD-70F859814C63}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

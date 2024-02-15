@@ -1,4 +1,4 @@
-﻿namespace DrinkMixer.Lib.BO
+﻿namespace DrinkMixer.Data.BO
 {
     public class IngredientBO : BaseData
     {

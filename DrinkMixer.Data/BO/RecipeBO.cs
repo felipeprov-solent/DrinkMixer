@@ -1,6 +1,6 @@
-﻿using DrinkMixer.Exec.DAO;
+﻿using DrinkMixer.Data.DAO;
 
-namespace DrinkMixer.Lib.BO
+namespace DrinkMixer.Data.BO
 {
     public class RecipeBO : BaseData
     {
@@ -36,25 +36,20 @@ namespace DrinkMixer.Lib.BO
             }
         }
 
-        public virtual decimal SellPriceInEuro
-        {
-            get
-            {
-                return RowPriceInEuro + RowPriceInEuro * Data.Margin;
-            }
-        }
-
-        public virtual string DisplayPriceInEuro
-        {
-            get
-            {
-                return string.Format("{0:N} euro", SellPriceInEuro);
-            }
-        }
-
         public RecipeBO()
         {
 
+        }
+
+        public decimal GetSellPriceInEuro(decimal margin)
+        {
+           return RowPriceInEuro + RowPriceInEuro * margin;
+        }
+
+        public string GetDisplayPriceInEuro(decimal margin)
+        {
+            
+            return string.Format("{0:N} euro", GetSellPriceInEuro(margin));
         }
     }
 }

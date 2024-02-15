@@ -1,17 +1,18 @@
-﻿using DrinkMixer.Lib.BO;
+﻿using DrinkMixer.Data.BO;
 
-namespace DrinkMixer.Exec.DAO
+namespace DrinkMixer.Data.DAO
 {
     /// <summary>
-    /// Classe temporaire pour pouvoir travailler avec les données
-    ///  => l'objectif serait d'avoir ces informations dans une DB
+    /// Classe avec variables globales pour pouvoir travailler avec les données
+    ///  => l'objectif serait d'avoir ces informations dans une DB ou fichier
     /// </summary>
     public static class Data
     {
-        public static decimal Margin = 0.3m; //Devrait être en conf
+        public static readonly ParameterBO Parameter = new() { Margin = 0.3m };
 
         private static readonly List<RecipeBO> RecipeList = InitData();
         public static List<RecipeBO> Recipes { get => RecipeList; }
+
 
         private static List<RecipeBO> InitData()
         {
